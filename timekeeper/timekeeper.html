@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+    
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </head>
+    <br><br>
+<body onload="SetDate1(); SetDate2(); SetDate3(); SetDate4(); SetDate5();SetDate6();">
+    <div class="container">
+        <div class="row center-block" style="height:500px">
+            <div class="col-xs-12">
+                <br>
+                <center><h2>Current Roster</h2></center>
+                <br><br>
+                <center>
+                    <table border="3">
+                        <tr>
+                            <th>Clock-In/Clock-Out</th>
+                            <th>Time-In/Time-out</th>
+                        </tr>
+                        <tr>
+    
+                            
+                            <td>
+                            <label><input type="checkbox" class="cb" id="clockIn1" onclick="dynInput1(this);">Clock-in</label><br />
+                            <label><input type="checkbox" class="cb" id="clockOut1" onclick="dynInput2(this);">Clock-Out</label><br />
+                            </td>
+                            <td>
+                            Date: 
+                            <input type="date" id="theDate1"><br>
+                            <script>
+                                function SetDate1() {
+                                    var date = new Date();
+
+                                    var day = date.getDate();
+                                    var month = date.getMonth() + 1;
+                                    var year = date.getFullYear();
+
+                                    if (month < 10) month = "0" + month;
+                                    if (day < 10) day = "0" + day;
+
+                                    var today = year + "-" + month + "-" + day;
+
+
+                                    document.getElementById('theDate1').value = today;
+                                }
+                            </script>
+                            
+                           
+                              
+                                <div></div>
+                                Time-In: <input type="time" id="timeIn1" value = "now">
+
+                                <script>
+                                     function dynInput1(checkbox) {
+                                         if (checkbox.checked) {
+                                            $(function () {
+                                                var d = new Date(),
+                                                    h = d.getHours(),
+                                                    m = d.getMinutes();
+                                                if (h < 10) h = '0' + h;
+                                                if (m < 10) m = '0' + m;
+                                                $('input[type="time"][id="timeIn1"][value="now"]').each(function () {
+                                                    $(this).attr({'value':h+':'+m});
+                                                });
+                                            });
+                                         }
+                                         
+                                       }
+                                        </script>
+                                
+                                
+                                <br>
+                               
+                                    
+                                </div>
+
+                                Time Out: <input type="time" id="timeOut1" value = "now">
+                                <script>
+                                    function dynInput2(checkbox) {
+                                        if (checkbox.checked==true) {
+                                            $(function () {
+                                                var d = new Date(),
+                                                    h = d.getHours(),
+                                                    m = d.getMinutes();
+                                                if (h < 10) h = '0' + h;
+                                                if (m < 10) m = '0' + m;
+                                                $('input[type="time"][id="timeOut1"][value="now"]').each(function () {
+                                                    $(this).attr({ 'value': h + ':' + m });
+                                                });
+                                            });
+                                        }
+
+                                    }
+                                </script> 
+    
+                                <br>
+    
+    
+                            </td>
+    
+                        </tr>
+    
+                        <tr>
+    <td>
+        <label><input type="checkbox" class="cb" id="clockIn2" onclick="dynInput3(this);">Clock-in</label><br />
+        <label><input type="checkbox" class="cb" id="clockOut2" onclick="dynInput4(this);">Clock-Out</label><br />
+    </td>
+                            
+                                                    
+                        <td>
+                            Date: <input type="date" id="theDate2"><br>
+                            <script>
+                                function SetDate2() {
+                                    var date = new Date();
+
+                                    var day = date.getDate();
+                                    var month = date.getMonth() + 1;
+                                    var year = date.getFullYear();
+
+                                    if (month < 10) month = "0" + month;
+                                    if (day < 10) day = "0" + day;
+
+                                    var today = year + "-" + month + "-" + day;
+
+
+                                    document.getElementById('theDate2').value = today;
+                                }
+                            </script>
+                            
+                            
+                        
+                            <div></div>
+                            Time In: <input type="time" id="timeIn2" value="now">
+                                <script>
+                                    function dynInput3(checkbox) {
+                                        if (checkbox.checked) {
+                                            $(function () {
+                                                var d = new Date(),
+                                                    h = d.getHours(),
+                                                    m = d.getMinutes();
+                                                if (h < 10) h = '0' + h;
+                                                if (m < 10) m = '0' + m;
+                                                $('input[type="time"][id="timeIn2"][value="now"]').each(function () {
+                                                    $(this).attr({ 'value': h + ':' + m });
+                                                });
+                                            });
+                                        }
+
+                                    }
+                                </script>
+                        
+                            <br>
+                        
+                        
+                            </div>
+                        
+                            Time Out: <input type="time" id="timeOut2" value="now">
+                        <script>
+                            function dynInput4(checkbox) {
+                                if (checkbox.checked == true) {
+                                    $(function () {
+                                        var d = new Date(),
+                                            h = d.getHours(),
+                                            m = d.getMinutes();
+                                        if (h < 10) h = '0' + h;
+                                        if (m < 10) m = '0' + m;
+                                        $('input[type="time"][id="timeOut2"][value="now"]').each(function () {
+                                            $(this).attr({ 'value': h + ':' + m });
+                                        });
+                                    });
+                                }
+
+                            }
+                        </script>
+                            <br>
+                        
+                        
+                        </td>
+                        
+                        </tr>
+                        
+                        <tr>
+    
+                            <td>
+                                <label><input type="checkbox" class="cb" id="clockIn3" onclick="dynInput5(this);">Clock-in</label><br />
+                                <label><input type="checkbox" class="cb" id="clockOut3" onclick="dynInput6(this);">Clock-Out</label><br />
+                            </td>
+                           
+                            
+                            <td>
+                                Date: <input type="date" id="theDate3"><br>
+                            <script>
+                                function SetDate3() {
+                                    var date = new Date();
+
+                                    var day = date.getDate();
+                                    var month = date.getMonth() + 1;
+                                    var year = date.getFullYear();
+
+                                    if (month < 10) month = "0" + month;
+                                    if (day < 10) day = "0" + day;
+
+                                    var today = year + "-" + month + "-" + day;
+
+
+                                    document.getElementById('theDate3').value = today;
+                                }
+                            </script>
+                            
+                           
+                                <div></div>
+                                Time In: <input type="time" id="timeIn3" value="now">
+                            <script>
+                                function dynInput5(checkbox) {
+                                    if (checkbox.checked) {
+                                        $(function () {
+                                            var d = new Date(),
+                                                h = d.getHours(),
+                                                m = d.getMinutes();
+                                            if (h < 10) h = '0' + h;
+                                            if (m < 10) m = '0' + m;
+                                            $('input[type="time"][id="timeIn3"][value="now"]').each(function () {
+                                                $(this).attr({ 'value': h + ':' + m });
+                                            });
+                                        });
+                                    }
+
+                                }
+                            </script>
+                                <br>
+                            
+                            
+                                </div>
+                            
+                                Time Out: <input type="time" id="timeOut3" value="now">
+                            <script>
+                                function dynInput6(checkbox) {
+                                    if (checkbox.checked == true) {
+                                        $(function () {
+                                            var d = new Date(),
+                                                h = d.getHours(),
+                                                m = d.getMinutes();
+                                            if (h < 10) h = '0' + h;
+                                            if (m < 10) m = '0' + m;
+                                            $('input[type="time"][id="timeOut3"][value="now"]').each(function () {
+                                                $(this).attr({ 'value': h + ':' + m });
+                                            });
+                                        });
+                                    }
+
+                                }
+                            </script>
+                                <br>
+                            
+                            
+                            </td>
+                            
+                            </tr>
+                            
+                            <tr>
+    
+                            <td>
+                                <label><input type="checkbox" class="cb" id="clockIn4" onclick="dynInput7(this);">Clock-in</label><br />
+                                <label><input type="checkbox" class="cb" id="clockOut4" onclick="dynInput8(this);">Clock-Out</label><br />
+                            </td>
+                           
+                            
+                            <td>
+                                Date: <input type="date" id="theDate4"><br>
+                            <script>
+                                function SetDate4() {
+                                    var date = new Date();
+
+                                    var day = date.getDate();
+                                    var month = date.getMonth() + 1;
+                                    var year = date.getFullYear();
+
+                                    if (month < 10) month = "0" + month;
+                                    if (day < 10) day = "0" + day;
+
+                                    var today = year + "-" + month + "-" + day;
+
+
+                                    document.getElementById('theDate4').value = today;
+                                }
+                            </script>
+                            
+                           
+                                <div></div>
+                                Time In: <input type="time" id="timeIn4" value="now">
+                            <script>
+                                function dynInput7(checkbox) {
+                                    if (checkbox.checked) {
+                                        $(function () {
+                                            var d = new Date(),
+                                                h = d.getHours(),
+                                                m = d.getMinutes();
+                                            if (h < 10) h = '0' + h;
+                                            if (m < 10) m = '0' + m;
+                                            $('input[type="time"][id="timeIn4"][value="now"]').each(function () {
+                                                $(this).attr({ 'value': h + ':' + m });
+                                            });
+                                        });
+                                    }
+
+                                }
+                            </script>
+                                <br>
+                            
+                            
+                                </div>
+                            
+                                Time Out: <input type="time" id="timeOut4" value="now">
+                            <script>
+                                function dynInput8(checkbox) {
+                                    if (checkbox.checked == true) {
+                                        $(function () {
+                                            var d = new Date(),
+                                                h = d.getHours(),
+                                                m = d.getMinutes();
+                                            if (h < 10) h = '0' + h;
+                                            if (m < 10) m = '0' + m;
+                                            $('input[type="time"][id="timeOut4"][value="now"]').each(function () {
+                                                $(this).attr({ 'value': h + ':' + m });
+                                            });
+                                        });
+                                    }
+
+                                }
+                            </script>
+                                <br>
+                            
+                            
+                            </td>
+                            
+                            </tr>
+                            
+                            <tr>
+    <td>
+        <label><input type="checkbox" class="cb" id="clockIn5" onclick="dynInput9(this);">Clock-in</label><br />
+        <label><input type="checkbox" class="cb" id="clockOut5" onclick="dynInput10(this);">Clock-Out</label><br />
+    </td>
+                                                       
+                            
+                            <td>
+                                Date: <input type="date" id="theDate5"><br>
+                            <script>
+                                function SetDate5() {
+                                    var date = new Date();
+
+                                    var day = date.getDate();
+                                    var month = date.getMonth() + 1;
+                                    var year = date.getFullYear();
+
+                                    if (month < 10) month = "0" + month;
+                                    if (day < 10) day = "0" + day;
+
+                                    var today = year + "-" + month + "-" + day;
+
+
+                                    document.getElementById('theDate5').value = today;
+                                }
+                            </script>
+                            
+                           
+                                <div></div>
+                                Time In: <input type="time" id="timeIn5" value="now">
+                            <script>
+                                function dynInput9(checkbox) {
+                                    if (checkbox.checked) {
+                                        $(function () {
+                                            var d = new Date(),
+                                                h = d.getHours(),
+                                                m = d.getMinutes();
+                                            if (h < 10) h = '0' + h;
+                                            if (m < 10) m = '0' + m;
+                                            $('input[type="time"][id="timeIn5"][value="now"]').each(function () {
+                                                $(this).attr({ 'value': h + ':' + m });
+                                            });
+                                        });
+                                    }
+
+                                }
+                            </script>
+                                <br>
+                            
+                            
+                                </div>
+                            
+                                Time Out: <input type="time" id="timeOut5" value="now">
+                            <script>
+                                function dynInput10(checkbox) {
+                                    if (checkbox.checked == true) {
+                                        $(function () {
+                                            var d = new Date(),
+                                                h = d.getHours(),
+                                                m = d.getMinutes();
+                                            if (h < 10) h = '0' + h;
+                                            if (m < 10) m = '0' + m;
+                                            $('input[type="time"][id="timeOut5"][value="now"]').each(function () {
+                                                $(this).attr({ 'value': h + ':' + m });
+                                            });
+                                        });
+                                    }
+
+                                }
+                            </script>
+                                <br>
+                            
+                            
+                            </td>
+                            
+                            </tr>
+                            
+                            <tr>
+    
+    <td>
+        <label><input type="checkbox" class="cb" id="clockIn6" onclick="dynInput11(this);">Clock-in</label><br />
+        <label><input type="checkbox" class="cb" id="clockOut6" onclick="dynInput12(this);">Clock-Out</label><br />
+    </td>
+   
+<td>
+    Date: <input type="date" id="theDate6"><br>
+<script>
+    function SetDate6() {
+        var date = new Date();
+
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+
+        var today = year + "-" + month + "-" + day;
+
+
+        document.getElementById('theDate6').value = today;
+    }
+   </script>
+   
+    <div></div>
+    Time In: <input type="time" id="timeIn6" value="now">
+<script>
+    function dynInput11(checkbox) {
+        if (checkbox.checked) {
+            $(function () {
+                var d = new Date(),
+                    h = d.getHours(),
+                    m = d.getMinutes();
+                if (h < 10) h = '0' + h;
+                if (m < 10) m = '0' + m;
+                $('input[type="time"][id="timeIn6"][value="now"]').each(function () {
+                    $(this).attr({ 'value': h + ':' + m });
+                });
+            });
+        }
+
+    }
+</script>
+    <br>
+
+
+    </div>
+
+    Time Out: <input type="time" id="timeOut6" value="now">
+<script>
+    function dynInput12(checkbox) {
+        if (checkbox.checked == true) {
+            $(function () {
+                var d = new Date(),
+                    h = d.getHours(),
+                    m = d.getMinutes();
+                if (h < 10) h = '0' + h;
+                if (m < 10) m = '0' + m;
+                $('input[type="time"][id="timeOut6"][value="now"]').each(function () {
+                    $(this).attr({ 'value': h + ':' + m });
+                });
+            });
+        }
+
+    }
+</script>
+    <br>
+
+
+</td>
+
+</tr>
+
+<tr>
+                    </table>
+                </center>
+                <br>
+    
+                <form>
+                    <br>
+                    <center>
+    
+                        <input type="submit" class="btn btn-success" value="Submit Times">
+                    </center>
+                </form>
+    
+                <br><br>
+    
+            </div>
+            <div class="col-xs-12">
+                <a href="{{pathFor 'admin-dash'}}" class="btn btn-primary" role="button">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+    <script>
+   $("#datetime").datetimepicker();
+    </script>
+</html>
